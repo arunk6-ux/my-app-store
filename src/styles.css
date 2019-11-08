@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+img
+{
+    width:400px;
+    height:400px;
+    
+}
+.footer
+{
+    border:1px solid black;
+    background-color: gray;
+}
+.footer a{
+    color:black;
+    padding: 20px;
+}
+.row
+{
+    margin-left:-15px;
+}
+.card 
+{
+    margin-top:10px;
+}

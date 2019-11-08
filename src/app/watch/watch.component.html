@@ -1,0 +1,19 @@
+<div class="container-fluid">
+        <div class="row">
+      
+      
+          
+          <div class="card col-sm-3" *ngFor="let item of product">
+            <img src="{{item.image}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.name|uppercase}}</h5>
+              <h5 class="card-price">${{item.price}}</h5>
+              <p class="card-text">{{item.description}}</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button  class="btn btn-primary" *ngIf="item.isAvilable" [disabled]="!item.isAvilable">Add Cart</button>
+            </div>
+          </div>
+        
+        </div>
+      </div>
+      
