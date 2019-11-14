@@ -1,18 +1,21 @@
 import { Injectable } from '@angular/core';
 import {Product} from '../product/Product'
-
+import { environment} from '../../environments/environment'
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
-
-
-constructor() 
+add(value:any){
+  throw new Error('Method not implemented');
+}
+actionUrl: string = environment.baseUrl;
+constructor(private http:HttpClient) 
  {
    
  }
- private Products:Array<Product>=[
+ /*private Products:Array<Product>=[
 
     {
    name:'MI BAND4',
@@ -20,7 +23,7 @@ constructor()
    description:'',
    imageAlt:'',
    isAvilable:true,
-   price:2000
+   Price:2000
 
  },
    {
@@ -30,7 +33,7 @@ constructor()
      description:'',
      imageAlt:'',
      isAvilable:true,
-     price:1500
+     Price:1500
    },
    {
      
@@ -39,7 +42,7 @@ constructor()
      description:'',
      imageAlt:'',
      isAvilable:true,
-     price:800
+     Price:800
    },
    {
      
@@ -48,7 +51,7 @@ constructor()
      description:'',
      imageAlt:'',
      isAvilable:false,
-     price:1700
+     Price:1700
    },
    {
      
@@ -57,7 +60,7 @@ constructor()
      description:'',
      imageAlt:'',
      isAvilable:true,
-     price:1699
+     Price:1699
    },
    {
      
@@ -66,7 +69,7 @@ constructor()
      description:'',
      imageAlt:'',
      isAvilable:false,
-     price:1599
+     Price:1599
    },
    {
      
@@ -75,7 +78,7 @@ constructor()
      description:'',
      imageAlt:'',
      isAvilable:false,
-     price:1000
+     Price:1000
    },
    {
      
@@ -84,18 +87,27 @@ constructor()
      description:'',
      imageAlt:'',
      isAvilable:true,
-     price:599
+     Price:599
    }
    
  ];
-   
+   */
+  addProduct(product:Product)
+  {
+    return this.http.post(this.actionUrl+'/product',product);
+  }
+  getnewproduct(){
+    return this.http.get('http://localhost:3000/product');
+  }
+  filterProducts(id) {
+    return this.http.get(this.actionUrl+'/product/'+ id);
+  }
+  edit(formData,id){
+    return this.http.put(this.actionUrl+'/product/'+id,formData);
+  }
+  deleteProduct(id){
+    return this.http.delete(this.actionUrl+'/product/' + id)
+  }
   
-getProducts()
-{
-  return this.Products;
-}
-addProduct(ob)
-{
-   this.Products.push(ob);
-}
-}
+
+} 

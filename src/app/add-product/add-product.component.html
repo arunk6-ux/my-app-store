@@ -1,15 +1,18 @@
   
-<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+<form [formGroup]="myForm" >
+  
   <h4>Name</h4>
-  <input formControlName="name" placeholder="Your name">
+  <input formControlName="title" placeholder="Name">
   <h4>Image</h4>
-  <input formControlName="image" placeholder="imageURL">
+  <input formControlName="imageUrl" placeholder="imageURL">
   <h4>isAvailable</h4>
   <input formControlName="isAvailable" placeholder="true/false">
   <h4>Description</h4>
   <input formControlName="description" placeholder="Description">
-  <h4>Price</h4>
-  <input formControlName="Price" placeholder="Price">
+  <h4>price</h4>
+  <input formControlName="price" placeholder="Price">
   <br>
-  <button type="submit">Send</button>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Send</button>
+  <button type="button" class="btn btn-warning" (click)=del()>Delete</button>
+  
 </form>

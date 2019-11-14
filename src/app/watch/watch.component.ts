@@ -8,14 +8,29 @@ import { ProductService } from '../services/product.service';
 })
 export class WatchComponent implements OnInit {
 
-  
-    product;
-    constructor( private service: ProductService)
-    {
-      this.product=this.service.getProducts();
-    }
+  product: any;
+
+  constructor(private service: ProductService) { }
 
   ngOnInit() {
-  }
- 
+
+
+    {
+      alert('inside');
+      this.service.getnewproduct().subscribe(Response => { this.product = Response });
+      console.log(this.product);
+
+    }
+
+    
+
+
+  
+}
+deleted(data)
+{
+  this.service.getnewproduct().subscribe(Response => { this.product = Response });
+
+
+}
 }

@@ -1,0 +1,17 @@
+            <div>
+
+            
+            <img src="{{item.imageUrl}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">{{item.id}}</h5>
+                <h5 class="card-title">{{item.title}}</h5>
+               
+              <h5 class="card-price">₹{{item.price}}</h5>
+              <p class="card-text">{{item.description}}</p>
+              <p class="card-text">{{item.isAvailable}}</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <button  class="btn btn-primary"  [disabled]="!item.isAvilable">Add to Cart</button>
+              <button type="button" class="btn btn-warning" [routerLink]="['/add-product',item.id]">EDIT</button>
+              
+              <button type="button" class="btn btn-warning"(click)=delete(item.id)>DELETE</button>
+            </div>
